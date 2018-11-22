@@ -1,0 +1,15 @@
+CC=g++
+exe=newmain
+
+$(exe): newmain.o critters.o ants.o doodle.o
+	$(CC) newmain.o critters.o ants.o doodle.o  -o $(exe)
+newmain.o: newmain.cpp
+	$(CC) -c newmain.cpp
+critters.o: critters.cpp
+	$(CC) -c critters.cpp
+ants.o: ants.cpp
+	$(CC) -c ants.cpp
+doodle.o: doodle.cpp
+	$(CC) -c doodle.cpp
+clean:
+	rm -f a.out $(exe) *.o
